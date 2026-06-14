@@ -1,173 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Executive Digital Card</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#e9ebe6;
-  color:#17352b;
+font-family:Arial,sans-serif;
+background:#f3f1eb;
 }
 
 .card{
-  min-height:100vh;
-  max-width:430px;
-  margin:auto;
-  padding:34px 24px;
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(180deg,#f8f7f2,#ece8df);
+position:relative;
+width:100%;
+max-width:430px;
+height:100vh;
+margin:auto;
+overflow:hidden;
+background:linear-gradient(180deg,#f8f7f3,#efede7);
 }
 
+/* الخلفيات */
+
 .card:before{
-  content:"";
-  position:absolute;
-  top:-80px;
-  right:-130px;
-  width:360px;
-  height:360px;
-  border-radius:50%;
-  background:rgba(47,96,77,.18);
-  border:2px solid #c8a45d;
+content:"";
+position:absolute;
+top:-120px;
+right:-80px;
+width:260px;
+height:260px;
+border-radius:50%;
+background:#dfe4de;
+border:2px solid #cfa85b;
 }
 
 .card:after{
-  content:"";
-  position:absolute;
-  bottom:-130px;
-  left:-120px;
-  width:360px;
-  height:360px;
-  border-radius:50%;
-  background:#1f5a43;
-  opacity:.9;
-  border:2px solid #c8a45d;
+content:"";
+position:absolute;
+bottom:-120px;
+left:-120px;
+width:280px;
+height:280px;
+border-radius:50%;
+background:#2f6b54;
+border:2px solid #cfa85b;
 }
+
+/* الشعار */
 
 .logo{
-  width:150px;
-  position:relative;
-  z-index:2;
+width:145px;
+position:absolute;
+top:28px;
+left:25px;
+z-index:10;
 }
+
+/* المصنع */
 
 .plant{
-  position:absolute;
-  top:105px;
-  right:-35px;
-  width:260px;
-  height:210px;
-  object-fit:cover;
-  opacity:.22;
-  border-radius:120px 0 0 120px;
+position:absolute;
+top:0;
+right:0;
+width:230px;
+opacity:.20;
+border-radius:0 0 0 120px;
 }
 
+/* الصورة */
+
 .profile{
-  position:relative;
-  z-index:2;
-  width:210px;
-  height:210px;
-  margin:120px auto 32px;
-  border-radius:50%;
-  padding:6px;
-  background:linear-gradient(135deg,#d8b56c,#fff,#c79b45);
-  box-shadow:0 18px 35px rgba(0,0,0,.18);
+position:relative;
+z-index:5;
+width:145px;
+height:145px;
+margin:120px auto 20px;
+border-radius:50%;
+padding:4px;
+background:linear-gradient(135deg,#c79d4c,#fff,#d7b36b);
+box-shadow:0 15px 25px rgba(0,0,0,.15);
 }
 
 .profile img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
 }
 
+/* النصوص */
+
 h1{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  font-size:38px;
-  margin:0;
-  font-family:Georgia,serif;
-  color:#11392d;
+text-align:center;
+font-family:Georgia,serif;
+font-size:28px;
+color:#103d31;
+margin-top:5px;
 }
 
 h1 span{
-  color:#b58b45;
+color:#c79d4c;
 }
 
 .line{
-  width:240px;
-  height:1px;
-  background:#c8a45d;
-  margin:16px auto;
-  position:relative;
-  z-index:2;
+width:200px;
+height:1px;
+background:#d0b071;
+margin:12px auto;
 }
 
 .title{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  letter-spacing:8px;
-  font-size:17px;
-  color:#1f5a43;
-  font-weight:bold;
+text-align:center;
+font-size:16px;
+font-weight:bold;
+letter-spacing:6px;
+color:#1f5a43;
 }
 
 .subtitle{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  font-size:18px;
-  margin-top:14px;
-  color:#263b3b;
+text-align:center;
+margin-top:12px;
+font-size:15px;
+color:#333;
 }
 
+/* الازرار */
+
 .buttons{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-top:38px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+padding:25px 18px 0;
 }
 
 .btn{
-  text-decoration:none;
-  color:#142f2a;
-  background:rgba(255,255,255,.72);
-  border-radius:18px;
-  padding:22px 10px;
-  text-align:center;
-  box-shadow:0 12px 25px rgba(0,0,0,.12);
-  border:1px solid rgba(255,255,255,.9);
+background:rgba(255,255,255,.85);
+border-radius:14px;
+padding:12px 5px;
+text-decoration:none;
+text-align:center;
+color:#17352b;
+box-shadow:0 8px 18px rgba(0,0,0,.10);
 }
 
 .icon{
-  font-size:32px;
-  color:#b58b45;
-  margin-bottom:10px;
+font-size:24px;
+margin-bottom:8px;
+color:#c79d4c;
 }
 
-.btn b{
-  display:block;
-  font-size:15px;
-  letter-spacing:1px;
+.btn span{
+display:block;
+font-size:11px;
+font-weight:bold;
 }
+
+/* الموقع */
 
 .footer{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  margin-top:70px;
-  letter-spacing:6px;
-  font-size:14px;
-  color:#17352b;
+text-align:center;
+margin-top:28px;
+font-size:12px;
+letter-spacing:5px;
+color:#17352b;
+}
+
+.footer-icon{
+text-align:center;
+font-size:20px;
+color:#c79d4c;
+margin-bottom:8px;
 }
 
 </style>
@@ -177,45 +187,54 @@ h1 span{
 
 <div class="card">
 
-  <img class="logo" src="logo.png" alt="Petro Rabigh Logo">
+<img src="logo.png" class="logo">
 
-  <img class="plant" src="plant.jpg" alt="Plant">
+<img src="plant.jpg" class="plant">
 
-  <div class="profile">
-    <img src="profile.jpg" alt="Executive Photo">
-  </div>
+<div class="profile">
+<img src="profile.jpg">
+</div>
 
-  <h1><span>Eng.</span> Your Name</h1>
+<h1><span>Eng.</span> Your Name</h1>
 
-  <div class="line"></div>
+<div class="line"></div>
 
-  <div class="title">VICE PRESIDENT</div>
+<div class="title">
+VICE PRESIDENT
+</div>
 
-  <div class="subtitle">Leading Growth & Innovation</div>
+<div class="subtitle">
+Leading Growth & Innovation
+</div>
 
-  <div class="buttons">
-    <a class="btn" href="tel:+966500000000">
-      <div class="icon">☎</div>
-      <b>CALL</b>
-    </a>
+<div class="buttons">
 
-    <a class="btn" href="mailto:email@company.com">
-      <div class="icon">✉</div>
-      <b>EMAIL</b>
-    </a>
+<a class="btn" href="tel:+966500000000">
+<div class="icon">📞</div>
+<span>CALL</span>
+</a>
 
-    <a class="btn" href="#">
-      <div class="icon">in</div>
-      <b>LINKEDIN</b>
-    </a>
+<a class="btn" href="mailto:email@company.com">
+<div class="icon">✉️</div>
+<span>EMAIL</span>
+</a>
 
-    <a class="btn" href="#">
-      <div class="icon">▣</div>
-      <b>SAVE CONTACT</b>
-    </a>
-  </div>
+<a class="btn" href="#">
+<div class="icon">in</div>
+<span>LINKEDIN</span>
+</a>
 
-  <div class="footer">PETRORABIGH.COM</div>
+<a class="btn" href="#">
+<div class="icon">▣</div>
+<span>CONTACT</span>
+</a>
+
+</div>
+
+<div class="footer">
+<div class="footer-icon">🌐</div>
+PETRORABIGH.COM
+</div>
 
 </div>
 
